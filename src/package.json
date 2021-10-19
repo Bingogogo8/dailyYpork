@@ -1,0 +1,7 @@
+{   
+    "description" : "checkin",
+    "dependencies": {
+        "crypto-js": "^4.1.1",
+        "puppeteer": "10.4.0"
+    }
+}

@@ -1,0 +1,44 @@
+app: index
+component: scf
+inputs:
+  cls:
+    logsetId: 0a4b7847-a2bf-4725-a59c-b391a5490db7
+    topicId: a9778d02-ce79-47a0-9338-651e6ea58ebb
+  description: SCF created by Tencent Serverless Toolkit for VS Code
+  eip: false
+  enableRoleAuth: true
+  events:
+    - apigw:
+        name: serverless_api
+        parameters:
+          endpoints:
+            - function:
+                functionQualifier: $DEFAULT
+                isIntegratedResponse: false
+              method: GET
+              path: /
+          environment: release
+          protocols:
+            - http
+            - https
+          serviceId: service-gpp9xtcw
+    - timer:
+        name: SCF-timer-1634652906
+        parameters:
+          cronExpression: 0 0 0 */1 * * *
+          enable: true
+          qualifier: $DEFAULT
+  handler: index.main_handler
+  memorySize: 128
+  name: index
+  namespace: default
+  publicAccess: true
+  region: ap-guangzhou
+  runtime: Nodejs12.16
+  src: ./src
+  timeout: 900
+name: ap-guangzhou_default_index
+org: '1305870242'
+stage: dev
+# When using this configuration file for deployment, make sure the file name is "serverless.yml".
+# For more information: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
